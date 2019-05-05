@@ -3,19 +3,16 @@ import React from "react";
 
 // Material UI components
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
 import Grid from "@material-ui/core/Grid";
 
-// Icon
-import MenuIcon from "@material-ui/icons/Menu";
+// LeftBar components
+import SideDrawer from "./SideDrawer/SideDrawer";
 
 // LeftBar
 const LeftBar = () => (
   <Grid item>
     <Grid justify="left" container alignItems="center">
-      <IconButton color="inherit">
-        <MenuIcon />
-      </IconButton>
+      <SideDrawer />
 
       <Typography variant="h6" color="inherit">
         Text Generator
