@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import Cockpit from "../components/Cockpit/Cockpit";
+import Page from "../components/Page/Page";
 
 class App extends Component {
   render() {
-    return <Cockpit/>
+    return <Page/>
   }
 }
 

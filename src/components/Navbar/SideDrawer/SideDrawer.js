@@ -17,6 +17,7 @@ import { DRAWER_WIDTH } from "../../../constants";
 import drawerItems from "./drawerItems";
 
 const styles = theme => ({
+  // Hide the drawer when the viewport is small
   drawer: {
     [theme.breakpoints.up("sm")]: {
       width: DRAWER_WIDTH

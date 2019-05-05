@@ -12,11 +12,12 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 // Style tool
 import { withStyles } from "@material-ui/core/styles";
 
-const styles = {
+const styles = theme => ({
+  // Style for the Github icon
   githubIcon: {
     fontSize: "2rem"
   }
-};
+});
 
 // RightBar
 const RightBar = props => (

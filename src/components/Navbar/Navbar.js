@@ -18,10 +18,9 @@ import { withStyles } from "@material-ui/core/styles";
 import { DRAWER_WIDTH } from "../../constants";
 
 const styles = theme => ({
-  root: {
-    display: "flex"
-  },
+  // Style for the navbar
   navbar: {
+    // Make navbar full size when viewport is small
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - ${DRAWER_WIDTH}px)`,
       marginLeft: DRAWER_WIDTH

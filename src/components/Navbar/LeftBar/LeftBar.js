@@ -8,11 +8,12 @@ import Grid from "@material-ui/core/Grid";
 // Style tool
 import { withStyles } from "@material-ui/core/styles";
 
-const styles = {
+const styles = theme => ({
+  // Style for the page title
   title: {
     color: "#424242"
   }
-};
+});
 
 // LeftBar
 const LeftBar = props => (
