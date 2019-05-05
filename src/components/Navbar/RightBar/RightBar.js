@@ -9,13 +9,22 @@ import Grid from "@material-ui/core/Grid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
+// Style tool
+import { withStyles } from "@material-ui/core/styles";
+
+const styles = {
+  githubIcon: {
+    fontSize: "2rem"
+  }
+};
+
 // RightBar
-const RightBar = () => (
+const RightBar = props => (
   <Grid item>
     <IconButton color="inherit">
-      <FontAwesomeIcon icon={faGithub} />
+      <FontAwesomeIcon icon={faGithub} className={props.classes.githubIcon} />
     </IconButton>
   </Grid>
 );
 
-export default RightBar;
+export default withStyles(styles)(RightBar);

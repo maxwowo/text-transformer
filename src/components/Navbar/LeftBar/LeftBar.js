@@ -5,20 +5,24 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
-// LeftBar components
-import SideDrawer from "./SideDrawer/SideDrawer";
+// Style tool
+import { withStyles } from "@material-ui/core/styles";
+
+const styles = {
+  title: {
+    color: "#424242"
+  }
+};
 
 // LeftBar
-const LeftBar = () => (
+const LeftBar = props => (
   <Grid item>
     <Grid justify="left" container alignItems="center">
-      <SideDrawer />
-
-      <Typography variant="h6" color="inherit">
+      <Typography variant="h6" color="inherit" className={props.classes.title}>
         Text Generator
       </Typography>
     </Grid>
   </Grid>
 );
 
-export default LeftBar;
+export default withStyles(styles)(LeftBar);

@@ -9,17 +9,37 @@ import Grid from "@material-ui/core/Grid";
 // Navbar components
 import LeftBar from "./LeftBar/LeftBar";
 import RightBar from "./RightBar/RightBar";
+import SideDrawer from "./SideDrawer/SideDrawer";
+
+// Style tool
+import { withStyles } from "@material-ui/core/styles";
+
+// Constants
+import { DRAWER_WIDTH } from "../../constants";
+
+const styles = theme => ({
+  root: {
+    display: "flex"
+  },
+  navbar: {
+    [theme.breakpoints.up("sm")]: {
+      width: `calc(100% - ${DRAWER_WIDTH}px)`,
+      marginLeft: DRAWER_WIDTH
+    }
+  }
+});
 
 // Navbar
-const Navbar = () => (
-  <AppBar position="static" color="inherit">
+const Navbar = props => (
+  <AppBar position="static" color="inherit" className={props.classes.navbar}>
     <Toolbar>
       <Grid justify="space-between" container alignItems="center">
         <LeftBar />
+        <SideDrawer />
         <RightBar />
       </Grid>
     </Toolbar>
   </AppBar>
 );
 
-export default Navbar;
+export default withStyles(styles)(Navbar);
