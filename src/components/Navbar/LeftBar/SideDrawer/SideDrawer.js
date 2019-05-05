@@ -9,10 +9,12 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import CodeIcon from "@material-ui/icons/Code";
 
 // Icon
 import MenuIcon from "@material-ui/icons/Menu";
+
+// All the drawer items
+import drawerItems from "./drawerItems";
 
 const styles = {
   list: {
@@ -33,12 +35,12 @@ class SideDrawer extends Component {
     const sideList = (
       <div className={this.props.classes.list}>
         <List>
-          <ListItem button key={0}>
-            <ListItemIcon>
-              <CodeIcon />
-            </ListItemIcon>
-            <ListItemText primary={"About"} />
-          </ListItem>
+          {drawerItems.map((curr, i) => (
+            <ListItem button key={i}>
+              <ListItemIcon>{curr.icon}</ListItemIcon>
+              <ListItemText primary={curr.text} />
+            </ListItem>
+          ))}
         </List>
       </div>
     );
