@@ -1,5 +1,5 @@
 // Main processor API
-import process from "../processors";
+import processText from "../processors";
 
 // Constants
 import { BLOOD_TYPE_B } from "../constants/processors";
@@ -10,7 +10,7 @@ const initialState = {type: BLOOD_TYPE_B, text: "", processor: BLOOD_TYPE_B, tra
 
 const reducer = (state = initialState, action) => {
   // Duplicate state
-  const newState = {...state};
+  const duplicatedState = {...state};
 
   switch (action.type) {
 
@@ -18,22 +18,23 @@ const reducer = (state = initialState, action) => {
     case GENERATE:
       const newText = action.text;
 
-      newState.text = newText;
-      newState.transformedText = process(newText, state.processor);
+      duplicatedState.text = newText;
+      duplicatedState.transformedText = !newText.trim() ? "" : processText(state.processor)(newText);
 
-      return newState;
+      return duplicatedState;
 
     // Hot swap processor
     case CHANGE:
       const newProcessor = action.processor;
+      const text = duplicatedState.text;
 
-      newState.processor = newProcessor;
-      newState.transformedText = process(newState.text, newProcessor);
+      duplicatedState.processor = newProcessor;
+      duplicatedState.transformedText = !text.trim() ? "" : processText(newProcessor)(text);
 
-      return newState;
+      return duplicatedState;
 
     default:
-      return newState;
+      return duplicatedState;
   }
 };
 
