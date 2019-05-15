@@ -1,26 +1,30 @@
 // React
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
 // Custom components
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import Paper from "@material-ui/core/Paper";
 import TextBox from "./TextBox/TextBox";
-
 // Style tool
 import { withStyles } from "@material-ui/core/styles";
-
 // Constants
-import { DISPLAY_PAPER_PADDING, VIEWPORT_HEIGHT, PAPER_DISTANCE, PAPER_WIDTH, BOX_HEIGHT } from "../../../constants/styles";
-import { BLOOD_TYPE_B, CLAP, TRUMPET, OK } from "../../../constants/processors";
+import {
+  BOX_HEIGHT,
+  DISPLAY_PAPER_PADDING,
+  PAPER_DISTANCE,
+  PAPER_WIDTH,
+  VIEWPORT_HEIGHT,
+  DISPLAY_PAPER_BOTTOM_MARGIN
+} from "../../../constants/styles";
+import { BLOOD_TYPE_B, CLAP, OK, TRUMPET } from "../../../constants/processors";
 import { CHANGE } from "../../../constants/actions";
 
 const styles = theme => ({
   textPaper: {
-    marginTop: (VIEWPORT_HEIGHT - 2 * BOX_HEIGHT - PAPER_DISTANCE - 200) / 4,
+    marginTop: (VIEWPORT_HEIGHT - 2 * BOX_HEIGHT - PAPER_DISTANCE - DISPLAY_PAPER_BOTTOM_MARGIN - 200) / 4,
     marginBottom: PAPER_DISTANCE,
-    width:  `calc(${PAPER_WIDTH} + ${2 * DISPLAY_PAPER_PADDING}px)`,
+    width: `calc(${PAPER_WIDTH} + ${2 * DISPLAY_PAPER_PADDING}px)`,
     margin: "auto"
   },
   optionsBar: {

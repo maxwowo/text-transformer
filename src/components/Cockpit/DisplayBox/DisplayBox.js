@@ -10,7 +10,7 @@ import CloseIcon from "@material-ui/icons/Close";
 // Style tool
 import { withStyles } from "@material-ui/core/styles";
 // Constants
-import { DISPLAY_PAPER_PADDING, BOX_HEIGHT, PAPER_DISTANCE, PAPER_WIDTH } from "../../../constants/styles";
+import { DISPLAY_PAPER_PADDING, BOX_HEIGHT, DISPLAY_PAPER_BOTTOM_MARGIN, PAPER_WIDTH } from "../../../constants/styles";
 // Clipboard API
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
@@ -26,7 +26,8 @@ const styles = theme => ({
       cursor: "pointer"
     },
     userSelect: "none",
-    display: "flex"
+    display: "flex",
+    marginBottom: DISPLAY_PAPER_BOTTOM_MARGIN
   },
   close: {
     padding: theme.spacing.unit / 2
