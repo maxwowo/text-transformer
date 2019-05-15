@@ -10,7 +10,7 @@ import CloseIcon from "@material-ui/icons/Close";
 // Style tool
 import { withStyles } from "@material-ui/core/styles";
 // Constants
-import { DISPLAY_PAPER_PADDING, MIN_BOX_HEIGHT, PAPER_MARGIN_TOP, PAPER_WIDTH } from "../../../constants/styles";
+import { DISPLAY_PAPER_PADDING, BOX_HEIGHT, PAPER_DISTANCE, PAPER_WIDTH } from "../../../constants/styles";
 // Clipboard API
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
@@ -18,8 +18,7 @@ const styles = theme => ({
   displayPaper: {
     width: `calc(${PAPER_WIDTH})`,
     margin: "auto",
-    marginTop: PAPER_MARGIN_TOP,
-    minHeight: MIN_BOX_HEIGHT,
+    minHeight: BOX_HEIGHT,
     padding: DISPLAY_PAPER_PADDING,
     textAlign: "center",
     fontSize: "3rem",

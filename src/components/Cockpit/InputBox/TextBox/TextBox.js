@@ -6,13 +6,13 @@ import Input from "@material-ui/core/Input";
 // Style tool
 import { withStyles } from "@material-ui/core/styles";
 // Constants
-import { MIN_BOX_HEIGHT } from "../../../../constants/styles";
+import { BOX_HEIGHT } from "../../../../constants/styles";
 import { GENERATE } from "../../../../constants/actions";
 
 const styles = theme => ({
   textField: {
     width: "100%",
-    height: MIN_BOX_HEIGHT
+    height: BOX_HEIGHT
   }
 });
 

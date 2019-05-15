@@ -12,14 +12,15 @@ import TextBox from "./TextBox/TextBox";
 import { withStyles } from "@material-ui/core/styles";
 
 // Constants
-import { DISPLAY_PAPER_PADDING, PAPER_MARGIN_TOP, PAPER_WIDTH } from "../../../constants/styles";
+import { DISPLAY_PAPER_PADDING, VIEWPORT_HEIGHT, PAPER_DISTANCE, PAPER_WIDTH, BOX_HEIGHT } from "../../../constants/styles";
 import { BLOOD_TYPE_B, CLAP, TRUMPET, OK } from "../../../constants/processors";
 import { CHANGE } from "../../../constants/actions";
 
 const styles = theme => ({
   textPaper: {
-    marginTop: PAPER_MARGIN_TOP,
-    width: `calc(${PAPER_WIDTH} + ${2 * DISPLAY_PAPER_PADDING}px)`,
+    marginTop: (VIEWPORT_HEIGHT - 2 * BOX_HEIGHT - PAPER_DISTANCE - 200) / 4,
+    marginBottom: PAPER_DISTANCE,
+    width:  `calc(${PAPER_WIDTH} + ${2 * DISPLAY_PAPER_PADDING}px)`,
     margin: "auto"
   },
   optionsBar: {
