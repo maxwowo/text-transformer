@@ -10,7 +10,7 @@ import TextBox from "./TextBox/TextBox";
 import { withStyles } from "@material-ui/core/styles";
 // Constants
 import { DISPLAY_PAPER_PADDING, PAPER_MARGIN_TOP, PAPER_WIDTH } from "../../../constants/styles";
-import { BLOOD_TYPE_B, CLAP, HORN, OK } from "../../../constants/processors";
+import { BLOOD_TYPE_B, CLAP, TRUMPET, OK } from "../../../constants/processors";
 import { CHANGE } from "../../../constants/actions";
 
 const styles = theme => ({
@@ -43,7 +43,7 @@ class ProcessorOptions extends Component {
                           className={this.props.classes.optionsBar}>
           <BottomNavigationAction value={BLOOD_TYPE_B} icon="🅱️"/>
           <BottomNavigationAction value={CLAP} icon="👏"/>
-          <BottomNavigationAction value={HORN} icon="🎺"/>
+          <BottomNavigationAction value={TRUMPET} icon="🎺"/>
           <BottomNavigationAction value={OK} icon="👌"/>
         </BottomNavigation>
 
