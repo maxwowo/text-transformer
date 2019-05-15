@@ -19,16 +19,16 @@ const processOk = text => text.split("").map(c => (randInt(0, 1) % 2 || c === "i
 
 const processText = processor => {
   switch (processor) {
-    case BLOOD_TYPE_B:
-      return processBloodTypeB;
-    case TRUMPET:
-      return processTrumpet;
-    case CLAP:
-      return processClap;
-    case OK:
-      return processOk;
-    default:
-      throw new Error("Processor does not exist!");
+
+    case BLOOD_TYPE_B: return processBloodTypeB;
+
+    case TRUMPET: return processTrumpet;
+
+    case CLAP: return processClap;
+
+    case OK: return processOk;
+
+    default: throw new Error("Processor does not exist!");
   }
 };
 

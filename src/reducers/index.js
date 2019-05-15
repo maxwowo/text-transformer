@@ -10,7 +10,7 @@ const initialState = {type: BLOOD_TYPE_B, text: "", processor: BLOOD_TYPE_B, tra
 
 const reducer = (state = initialState, action) => {
   // Duplicate state
-  const duplicatedState = {...state};
+  const dupState = {...state};
 
   switch (action.type) {
 
@@ -18,23 +18,25 @@ const reducer = (state = initialState, action) => {
     case GENERATE:
       const newText = action.text;
 
-      duplicatedState.text = newText;
-      duplicatedState.transformedText = !newText.trim() ? "" : processText(state.processor)(newText);
+      dupState.text = newText;
 
-      return duplicatedState;
+      dupState.transformedText = !newText.trim() ? "" : processText(state.processor)(newText);
+
+      return dupState;
 
     // Hot swap processor
     case CHANGE:
       const newProcessor = action.processor;
-      const text = duplicatedState.text;
+      const text = dupState.text;
 
-      duplicatedState.processor = newProcessor;
-      duplicatedState.transformedText = !text.trim() ? "" : processText(newProcessor)(text);
+      dupState.processor = newProcessor;
 
-      return duplicatedState;
+      dupState.transformedText = !text.trim() ? "" : processText(newProcessor)(text);
+
+      return dupState;
 
     default:
-      return duplicatedState;
+      return dupState;
   }
 };
 
