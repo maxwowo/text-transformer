@@ -1,20 +1,18 @@
 // React
 import React from "react";
 import { connect } from "react-redux";
-
 // Material UI components
-import TextField from "@material-ui/core/TextField";
-
+import Input from "@material-ui/core/Input";
 // Style tool
 import { withStyles } from "@material-ui/core/styles";
-
 // Constants
-import { INPUT_TEXTFIELD_PADDING_TOP } from "../../../../constants/styles";
+import { INPUT_TEXTFIELD_PADDING_TOP, MIN_BOX_HEIGHT } from "../../../../constants/styles";
 import { GENERATE } from "../../../../constants/actions";
 
 const styles = theme => ({
   textField: {
-    width: "100%"
+    width: "100%",
+    height: MIN_BOX_HEIGHT
   }
 });
 
@@ -22,24 +20,17 @@ const mapDispatchToProps = dispatch => ({
   OnTextChanged: (text, processor) => dispatch({text: text, type: GENERATE, processor: processor})
 });
 
-const InputBox = props => {
-  const numRows = Math.floor(window.innerHeight / 90);
-
-  return (
-    <TextField
-      id="outlined-multiline-static"
-      multiline
-      rows={numRows}
-      className={props.classes.textField}
-      inputProps={{
-        style: {textAlign: "center", fontSize: "3rem", paddingTop: INPUT_TEXTFIELD_PADDING_TOP}
-      }}
-      autoFocus={true}
-      onChange={e => {
-        props.OnTextChanged(e.target.value, props.type);
-      }}
-    />
-  );
-};
+const InputBox = props => (
+  <Input
+    autoFocus={true}
+    onChange={e => {
+      props.OnTextChanged(e.target.value, props.type);
+    }}
+    inputProps={{
+      style: {textAlign: "center", fontSize: "3rem", paddingTop: INPUT_TEXTFIELD_PADDING_TOP}
+    }}
+    className={props.classes.textField}
+  />
+);
 
 export default connect(null, mapDispatchToProps)(withStyles(styles)(InputBox));

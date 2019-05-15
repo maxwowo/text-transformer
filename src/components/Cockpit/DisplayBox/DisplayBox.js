@@ -13,27 +13,31 @@ import CloseIcon from "@material-ui/icons/Close";
 import { withStyles } from "@material-ui/core/styles";
 
 // Constants
-import { DISPLAY_PAPER_PADDING, PAPER_MARGIN_TOP, PAPER_WIDTH } from "../../../constants/styles";
+import { DISPLAY_PAPER_PADDING, PAPER_MARGIN_TOP, PAPER_WIDTH, MIN_BOX_HEIGHT } from "../../../constants/styles";
 
 // Clipboard API
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const styles = theme => ({
-  displayBox: {
+  displayPaper: {
     width: `calc(${PAPER_WIDTH})`,
     margin: "auto",
     marginTop: PAPER_MARGIN_TOP,
-    minHeight: "20vh",
+    minHeight: MIN_BOX_HEIGHT,
     padding: DISPLAY_PAPER_PADDING,
     textAlign: "center",
     fontSize: "3rem",
     "&:hover": {
       cursor: "pointer"
     },
-    userSelect: "none"
+    userSelect: "none",
+    display: "flex"
   },
   close: {
     padding: theme.spacing.unit / 2
+  },
+  displayText: {
+    margin: "auto"
   }
 });
 
@@ -58,7 +62,7 @@ class DisplayBox extends Component {
     return (
       <div>
         <CopyToClipboard text={this.props.text}>
-          <Paper className={this.props.classes.displayBox} elevation={4} onClick={this.handleClick}>
+          <Paper className={this.props.classes.displayPaper} elevation={4} onClick={this.handleClick}>
             <Typography variant="h2" color="inherit" className={this.props.classes.displayText}>
               {this.props.text}
             </Typography>
