@@ -1,6 +1,9 @@
 // Processors
 import { BLOOD_TYPE_B, CLAP, OK, TRUMPET } from "../constants/processors";
 
+// Random number generator
+const randInt = (lo, hi) => Math.round(Math.random() * hi) - lo;
+
 // Replace every occurrence of b and B with the blood type b emoji
 const processBloodTypeB = text => !text.trim() ? "" : text.replace(/[bB]/g, "🅱️");
 
@@ -12,7 +15,7 @@ const processTrumpet = text => !text.trim() ? "" : `🎺${text.trim().split("").
 
 // Alternating upper and lower cases
 const processOk = text => !text.trim() ? "" :
-  text.split("").map((c, i) => (i % 2 ? c.toLowerCase() : c.toUpperCase())).join("");
+  text.split("").map(c => (randInt(0, 1) % 2 || c === 'i' ? c.toLowerCase() : c.toUpperCase())).join("");
 
 const process = (text, processor) => {
   switch (processor) {
