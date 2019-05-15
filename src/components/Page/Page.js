@@ -1,7 +1,7 @@
 // React
 import React from "react";
 
-// Page components
+// Custom components
 import Navbar from "../Navbar/Navbar";
 import Cockpit from "../Cockpit/Cockpit";
 
