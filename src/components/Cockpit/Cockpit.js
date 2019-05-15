@@ -12,7 +12,7 @@ import DisplayBox from "./DisplayBox/DisplayBox";
 import { withStyles } from "@material-ui/core/styles";
 
 // Constants
-import { DRAWER_WIDTH } from "../../constants";
+import { DRAWER_WIDTH } from "../../constants/styles";
 
 const styles = theme => ({
   // Style for the navbar

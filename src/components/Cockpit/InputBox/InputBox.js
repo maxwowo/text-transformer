@@ -1,18 +1,17 @@
-// React
-import React from "react";
+import React, { Component } from "react";
 
-// Material UI components
-import TextField from "@material-ui/core/TextField";
+import BottomNavigation from "@material-ui/core/BottomNavigation";
+import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import Paper from "@material-ui/core/Paper";
 
+import { BLOOD_TYPE_B, CLAP, HORN } from "../../../constants/processors";
+
+import TextBox from "./TextBox/TextBox";
 // Style tool
 import { withStyles } from "@material-ui/core/styles";
-
-// Input box components
-import ProcessorOptions from "./ProcessorOptions/ProcessorOptions";
-
 // Constants
-import { DISPLAY_PAPER_PADDING, INPUT_TEXTFIELD_PADDING_TOP, PAPER_MARGIN_TOP, PAPER_WIDTH } from "../../../constants";
+import { DISPLAY_PAPER_PADDING, PAPER_MARGIN_TOP, PAPER_WIDTH } from "../../../constants/styles";
+
 
 const styles = theme => ({
   textPaper: {
@@ -20,25 +19,37 @@ const styles = theme => ({
     width: `calc(${PAPER_WIDTH} + ${2 * DISPLAY_PAPER_PADDING}px)`,
     margin: "auto"
   },
-  textField: {
+  optionsBar: {
+    backgroundColor: "lightgrey",
+    borderRadius: "inherit",
     width: "100%"
   }
 });
 
-const InputBox = props => (
-  <Paper className={props.classes.textPaper} elevation={4}>
-    <ProcessorOptions/>
-    <TextField
-      id="outlined-multiline-static"
-      multiline
-      rows="10"
-      className={props.classes.textField}
-      inputProps={{
-        style: {textAlign: "center", fontSize: "3rem", paddingTop: INPUT_TEXTFIELD_PADDING_TOP}
-      }}
-      autoFocus={true}
-    />
-  </Paper>
-);
+class ProcessorOptions extends Component {
+  state = {
+    value: BLOOD_TYPE_B
+  };
 
-export default withStyles(styles)(InputBox);
+  handleOptionToggle = (event, val) => {
+    this.setState({value: val});
+  };
+
+  render() {
+    return (
+      <Paper className={this.props.classes.textPaper} elevation={4}>
+        <BottomNavigation value={this.state.value} onChange={this.handleOptionToggle}
+                          className={this.props.classes.optionsBar}>
+          <BottomNavigationAction value={BLOOD_TYPE_B} icon="🅱️"/>
+          <BottomNavigationAction value={CLAP} icon="👏"/>
+          <BottomNavigationAction value={HORN} icon="🎺"/>
+        </BottomNavigation>
+
+        <TextBox type={this.state.value} />
+      </Paper>
+    );
+  }
+
+}
+
+export default withStyles(styles)(ProcessorOptions);

@@ -18,7 +18,7 @@ const styles = theme => ({
 // LeftBar
 const LeftBar = props => (
   <Grid item>
-    <Grid justify="left" container alignItems="center">
+    <Grid container alignItems="center">
       <Typography variant="h6" color="inherit" className={props.classes.title}>
         Text Generator
       </Typography>

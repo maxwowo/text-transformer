@@ -11,7 +11,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Hidden from "@material-ui/core/Hidden";
 
 // Constants
-import { DRAWER_WIDTH } from "../../../constants";
+import { DRAWER_WIDTH } from "../../../constants/styles";
 
 // All the drawer items
 import drawerItems from "./drawerItems";
