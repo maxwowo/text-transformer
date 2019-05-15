@@ -1,10 +1,13 @@
 // React
 import React from "react";
 import { connect } from "react-redux";
+
 // Material UI components
 import TextField from "@material-ui/core/TextField";
+
 // Style tool
 import { withStyles } from "@material-ui/core/styles";
+
 // Constants
 import { INPUT_TEXTFIELD_PADDING_TOP } from "../../../../constants/styles";
 import { GENERATE } from "../../../../constants/actions";

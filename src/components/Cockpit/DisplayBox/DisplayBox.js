@@ -15,12 +15,14 @@ const styles = theme => ({
     margin: "auto",
     marginTop: PAPER_MARGIN_TOP,
     minHeight: "25vh",
-    padding: DISPLAY_PAPER_PADDING
+    padding: DISPLAY_PAPER_PADDING,
+    textAlign: "center",
+    fontSize: "3rem"
   }
 });
 
 const mapStateToProps = state => ({
-  text: state.text
+  text: state.transformedText
 });
 
 const DisplayBox = props => {

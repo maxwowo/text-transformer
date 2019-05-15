@@ -20,7 +20,7 @@ const LeftBar = props => (
   <Grid item>
     <Grid container alignItems="center">
       <Typography variant="h6" color="inherit" className={props.classes.title}>
-        Text Generator
+        Text Transformer
       </Typography>
     </Grid>
   </Grid>
