@@ -23,7 +23,7 @@ const styles = theme => ({
     width: `calc(${PAPER_WIDTH})`,
     margin: "auto",
     marginTop: PAPER_MARGIN_TOP,
-    minHeight: "25vh",
+    minHeight: "20vh",
     padding: DISPLAY_PAPER_PADDING,
     textAlign: "center",
     fontSize: "3rem",
