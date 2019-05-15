@@ -6,7 +6,7 @@ import Input from "@material-ui/core/Input";
 // Style tool
 import { withStyles } from "@material-ui/core/styles";
 // Constants
-import { INPUT_TEXTFIELD_PADDING_TOP, MIN_BOX_HEIGHT } from "../../../../constants/styles";
+import { MIN_BOX_HEIGHT } from "../../../../constants/styles";
 import { GENERATE } from "../../../../constants/actions";
 
 const styles = theme => ({
@@ -27,7 +27,7 @@ const InputBox = props => (
       props.OnTextChanged(e.target.value, props.type);
     }}
     inputProps={{
-      style: {textAlign: "center", fontSize: "3rem", paddingTop: INPUT_TEXTFIELD_PADDING_TOP}
+      style: {textAlign: "center", fontSize: "3rem"}
     }}
     className={props.classes.textField}
   />
