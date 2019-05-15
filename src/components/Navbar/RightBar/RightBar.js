@@ -1,14 +1,11 @@
 // React
 import React from "react";
-
 // Material UI components
 import IconButton from "@material-ui/core/IconButton";
 import Grid from "@material-ui/core/Grid";
-
 // Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-
 // Style tool
 import { withStyles } from "@material-ui/core/styles";
 
@@ -22,8 +19,10 @@ const styles = theme => ({
 // RightBar
 const RightBar = props => (
   <Grid item>
-    <IconButton color="inherit" onClick={() => {window.open("https://github.com/maxwowo", "_blank")}}>
-      <FontAwesomeIcon icon={faGithub} className={props.classes.githubIcon} />
+    <IconButton color="inherit" onClick={() => {
+      window.open("https://github.com/maxwowo/text-transformer", "_blank");
+    }}>
+      <FontAwesomeIcon icon={faGithub} className={props.classes.githubIcon}/>
     </IconButton>
   </Grid>
 );
