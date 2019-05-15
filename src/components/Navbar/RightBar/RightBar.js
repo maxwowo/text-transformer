@@ -22,7 +22,7 @@ const styles = theme => ({
 // RightBar
 const RightBar = props => (
   <Grid item>
-    <IconButton color="inherit">
+    <IconButton color="inherit" onClick={() => {window.open("https://github.com/maxwowo", "_blank")}}>
       <FontAwesomeIcon icon={faGithub} className={props.classes.githubIcon} />
     </IconButton>
   </Grid>
