@@ -3,9 +3,9 @@ import {BLOOD_TYPE_B, HORN, CLAP, OK} from "../constants/processors";
 // Replace every occurrence of b and B with the blood type b emoji
 const processBloodTypeB = text => text.replace(/[bB]/g, "🅱️");
 
-const processHorn = text => text;
+const processClap = text => text.replace(/ +/g, "👏");
 
-const processClap = text => text;
+const processHorn = text => text;
 
 const processOk = text => text;
 
