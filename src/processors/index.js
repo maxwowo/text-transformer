@@ -1,4 +1,4 @@
-// Processors
+// ProcessorsPage
 import { BLOOD_TYPE_B, CLAP, OK, TRUMPET } from "../constants/processors";
 
 // Random number generator

@@ -1,6 +1,9 @@
 // React
 import React from "react";
 
+// React router
+import { Link } from "react-router-dom";
+
 // Material UI components
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
@@ -9,8 +12,9 @@ import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
+
   // Style for the page title
-  title: {
+  titleLink: {
     color: "#424242"
   }
 });
@@ -20,7 +24,7 @@ const LeftBar = props => (
   <Grid item>
     <Grid container alignItems="center">
       <Typography variant="h6" color="inherit" className={props.classes.title}>
-        Text Transformer
+        <Link to="/" className={props.classes.titleLink}>Text Transformer</Link>
       </Typography>
     </Grid>
   </Grid>

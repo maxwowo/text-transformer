@@ -8,10 +8,10 @@ import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import EmailIcon from "@material-ui/icons/Email";
 
 const drawerItems = [
-  {text: "About", icon: <CodeIcon/>},
-  {text: "Processors", icon: <WhatsHotIcon/>},
-  {text: "Make suggestion", icon: <EmailIcon/>},
-  {text: "Help", icon: <ContactSupportIcon/>}
+  {text: "About", icon: <CodeIcon/>, link: "/about"},
+  {text: "Processors", icon: <WhatsHotIcon/>, link: "/processors"},
+  {text: "Make suggestion", icon: <EmailIcon/>, link: "contact"},
+  {text: "Help", icon: <ContactSupportIcon/>, link: "/help"}
 ];
 
 export default drawerItems;

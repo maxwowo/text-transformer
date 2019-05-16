@@ -1,13 +1,16 @@
 // React
 import React from "react";
 import { connect } from "react-redux";
+
 // Custom components
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import Paper from "@material-ui/core/Paper";
 import TextBox from "./TextBox/TextBox";
+
 // Style tool
 import { withStyles } from "@material-ui/core/styles";
+
 // Constants
 import {
   BOX_HEIGHT,
@@ -17,7 +20,9 @@ import {
   PAPER_WIDTH,
   VIEWPORT_HEIGHT
 } from "../../../constants/styles";
+
 import { BLOOD_TYPE_B, CLAP, OK, TRUMPET } from "../../../constants/processors";
+
 import { CHANGE } from "../../../constants/actions";
 
 const styles = theme => ({

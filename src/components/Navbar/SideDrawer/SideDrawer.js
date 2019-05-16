@@ -1,5 +1,8 @@
 // React
-import React, { Component } from "react";
+import React from "react";
+
+// React router
+import { Link } from "react-router-dom";
 
 // Material UI components
 import { withStyles } from "@material-ui/core/styles";
@@ -28,42 +31,35 @@ const styles = theme => ({
   }
 });
 
-class SideDrawer extends Component {
-  state = {
-    open: false
-  };
+const SideDrawer = props => {
 
-  handleDrawerToggle = () => {
-    this.setState({ open: !this.state.open });
-  };
-
-  render() {
-    const sideList = (
-      <List>
-        {drawerItems.map((curr, i) => (
+  const sideList = (
+    <List>
+      {drawerItems.map((curr, i) => (
+        <Link to={curr.link}>
           <ListItem button key={i}>
             <ListItemIcon>{curr.icon}</ListItemIcon>
-            <ListItemText primary={curr.text} />
+            <ListItemText primary={curr.text} primaryTypographyProps={{"variant": "button"}}/>
           </ListItem>
-        ))}
-      </List>
-    );
+        </Link>
+      ))}
+    </List>
+  );
 
-    return (
-      <Hidden xsDown implementation="css">
-        <Drawer
-          className={this.props.classes.drawer}
-          variant="permanent"
-          classes={{
-            paper: this.props.classes.drawerPaper
-          }}
-          anchor="left"
-        >
-          {sideList}
-        </Drawer>
-      </Hidden>
-    );
-  }
-}
+  return (
+    <Hidden xsDown implementation="css">
+      <Drawer
+        className={props.classes.drawer}
+        variant="permanent"
+        classes={{
+          paper: props.classes.drawerPaper
+        }}
+        anchor="left"
+      >
+        {sideList}
+      </Drawer>
+    </Hidden>
+  );
+};
 
 export default withStyles(styles)(SideDrawer);
