@@ -10,7 +10,7 @@ import EmailIcon from "@material-ui/icons/Email";
 const drawerItems = [
   {text: "About", icon: <CodeIcon/>, link: "/about"},
   {text: "Processors", icon: <WhatsHotIcon/>, link: "/processors"},
-  {text: "Make suggestion", icon: <EmailIcon/>, link: "contact"},
+  {text: "Contact", icon: <EmailIcon/>, link: "/contact"},
   {text: "Help", icon: <ContactSupportIcon/>, link: "/help"}
 ];
 
